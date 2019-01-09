@@ -51,7 +51,7 @@ ki = 4.095
 
   
 
-Even withe the above optimal values car over turns/goes out of track some times at higher speeds. To overcome this problem I have used below methods to have throttle value under control
+Even with the above optimal values car over turns/goes out of track some times at higher speeds. To overcome this problem I have used below methods to have throttle value under control
 
 Method 1:
 I have assumed the speed and steering value are inversely proportional.
