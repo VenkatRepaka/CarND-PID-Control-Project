@@ -37,7 +37,6 @@ int main()
 
   PID pid;
   // TODO: Initialize the pid variable.
-  // pid.Init(0.2, 0.004, 3.0);
   bool enable_twiddle = false;
   int run = 0;
   double sum_dp, tolerance = 0.001;
@@ -67,6 +66,7 @@ int main()
   // double p[3] = {0.045, 0.00015, 2.5}; {0.045, 0.00015, 2.0} // Out of road at 2nd turning after bridge
   // double p[3] = {0.055, 0.00015, 2.0}; // Not so good at 2nd turning after bridge
   // double p[3] = {0.07, 0.00011, 1.8}; // First reading which crossed 2 laps
+  // pid.Init(0.2, 0.004, 3.0);
   /*
   From 0.07, 0.00011, 1.8 t0 0.07, 0.0002, 1.8 It always passed lap but with increase in oscillation
   */
