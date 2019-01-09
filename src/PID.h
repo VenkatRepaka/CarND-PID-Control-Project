@@ -18,6 +18,13 @@ public:
   double Kd;
 
   /*
+  * Twiddle Parameters
+  */
+  int steps;
+  bool enable_twiddle = false;
+  int max_steps;
+
+  /*
   * Constructor
   */
   PID();

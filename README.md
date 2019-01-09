@@ -1,7 +1,37 @@
 # CarND-Controls-PID
 Self-Driving Car Engineer Nanodegree Program
 
----
+## PID Control Project Reflections and Summary
+
+## PID
+# P - proportional
+The proportional term computes the steering angle in proportional to the cross-track error. If only proportional term is considered for calculating the steering angle, steering angle overshooots the reference trajectory. It means car keeps on oscillating and never reaches the reference trajectory. And higher the value of P faster the oscillation.
+
+# D - differential
+By adding derivative of the cross track error the problem of oscillation can be mitigated. This means that the car has turned enough to reduce the cross track error.
+
+# I - integral
+Over long period of time the car does not acheive the intended trajectory. This is solved by adding sum of all CTE over time.
+
+## Hyperparameter Tuning
+The initial values that I found for the car to be on track are kp = 0.12, kd = 0.00065 and ki = 4.5. These values have been derived from trial and error method. kd value was tuned so that it helped in steep turns. This has the major impact for taking steeper turns. These were not the only values that have performed well.
+Below are a set of values that also did well
+0.15, 0.00075, 8.0
+0.099, 0.0002, 2.5
+What I understood is for a factor of P there is a factor of D that performed well. There are a range of local optimum values.
+
+But I chose kp = 0.12, kd = 0.00065 and ki = 4.5 values.
+After choosing the values I have decided to twiddle to optimise these coefficients. For the process I have chosen 1500 steps and the dp values are chosed by 10% of the coefficients. After every 1500 steps and updatiing the kp, ki and kd values appropriately the track is reset and starts from beginning. This process is continued till optimal values are found.
+With the values I chose the optimal values that were found after twiddle are
+kp = 0.132
+kd = 0.000649039
+ki = 4.095
+
+Even withe the above optimal values car over turns/goes out of track some times at higher speeds. To overcome this problem I have used below methods to have throttle value under control
+Method 1: 
+
+Methid 2: 
+
 
 ## Dependencies
 
